@@ -1,0 +1,21 @@
+title = "вапвп"
+url = "/create"
+layout = "main"
+is_hidden = 0
+
+[CharCreate]
+==
+<form data-request="CharCreate::onChooseRace" data-request-update="'classes_part' : '#classes-block'">
+{% for race in CharCreate.races %}
+    <label>
+    {{ race.name }}<br>
+    {{ race.planet.name }}<br>
+    <img src="{{ race.planet.planet_image.path }}">
+    <input type="radio" name="race_id" value="{{ race.id }}">
+    </label>
+{% endfor %}
+<input type="submit" value="Next">
+</form>
+<div id="classes-block">
+    {% partial 'classes_part' classes = CharCreate.classes %}
+</div>

@@ -1,0 +1,30 @@
+title = "Персонаж"
+url = "/character"
+layout = "main"
+is_hidden = 0
+==
+<h1>Character name</h1>
+<hr>
+<div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">Info</a></li>
+    <li role="presentation"><a href="#inventory" aria-controls="inventory" role="tab" data-toggle="tab">Inventory</a></li>   
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="info">
+    
+        {% partial 'character-info'%}
+    
+    </div>
+    <div role="tabpanel" class="tab-pane" id="inventory">
+    
+        {% partial 'character-inventory'%}
+    
+    </div>    
+  </div>
+
+</div>
