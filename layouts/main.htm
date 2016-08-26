@@ -1,6 +1,8 @@
 [session]
 security = "user"
 redirect = "login"
+
+[CharSession]
 ==
 <!DOCTYPE html>
 <html lang="ru">
@@ -25,6 +27,7 @@ redirect = "login"
     <![endif]-->
 </head>
 <body>
+{{ dump(session.user.toArray) }}
     {% partial 'top-nav' %}
 
     <div class="container-fluid">

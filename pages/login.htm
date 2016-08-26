@@ -4,19 +4,55 @@ layout = "login"
 is_hidden = 0
 
 [account]
+redirect = "glavnaya"
 paramCode = "code"
 ==
 <div class="container">
         <div class="login-block">
 
-          <form class="form-signin">
+          <form class="form-signin" data-request="account::onSignin">
             <h2 class="form-signin-heading">Войти в игру</h2>
             <label for="loginEmail" class="sr-only">Email</label>
-            <input type="email" id="loginEmail" class="form-control" placeholder="Email" required autofocus>
+            <input type="email" id="loginEmail" name="login" class="form-control" placeholder="Email" required autofocus>
             <label for="loginPassword" class="sr-only">Пароль</label>
-            <input type="password" id="loginPassword" class="form-control" placeholder="Пароль" required>            
+            <input type="password" id="loginPassword" name="password" class="form-control" placeholder="Пароль" required>            
             <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
           </form>
       
         </div>
+        <form
+    data-request="account::onRegister">
+    <div class="form-group">
+        <label for="registerName">Full Name</label>
+        <input
+            name="name"
+            type="text"
+            class="form-control"
+            id="registerName"
+            placeholder="Enter your full name" />
+    </div>
+
+    <div class="form-group">
+        <label for="registerEmail">Email</label>
+        <input
+            name="email"
+            type="email"
+            class="form-control"
+            id="registerEmail"
+            placeholder="Enter your email" />
+    </div>
+
+    <div class="form-group">
+        <label for="registerPassword">Password</label>
+        <input
+            name="password"
+            type="password"
+            class="form-control"
+            id="registerPassword"
+            placeholder="Choose a password" />
+    </div>
+
+    <button type="submit" class="btn btn-default">Register</button>
+</form>
+
     </div> <!-- /container -->
